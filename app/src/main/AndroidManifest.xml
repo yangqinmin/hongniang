@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FirstFragment">
+        </activity>
+        <activity android:name=".SecondFragment">
+        </activity>
+        <activity android:name=".ThirdFragment">
+        </activity>
+        <activity android:name=".FourthFragment">
+        </activity>
     </application>
 
 </manifest>
