@@ -22,22 +22,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private FirstFragment fg1;
     private SecondFragment fg2;
     private ThirdFragment fg3;
-    private FourthFragment fg4;
     // 帧布局对象，用来存放Fragment对象
     private FrameLayout frameLayout;
     // 定义每个选项中的相关控件
     private RelativeLayout firstLayout;
     private RelativeLayout secondLayout;
     private RelativeLayout thirdLayout;
-    private RelativeLayout fourthLayout;
     private ImageView firstImage;
     private ImageView secondImage;
     private ImageView thirdImage;
-    private ImageView fourthImage;
     private TextView firstText;
     private TextView secondText;
     private TextView thirdText;
-    private TextView fourthText;
     // 定义几个颜色
     private int whirt = 0xFFFFFFFF;
     private int gray = 0xFF7597B3;
@@ -63,19 +59,15 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         firstImage = (ImageView) findViewById(R.id.first_image);
         secondImage = (ImageView) findViewById(R.id.second_image);
         thirdImage = (ImageView) findViewById(R.id.third_image);
-        fourthImage = (ImageView) findViewById(R.id.fourth_image);
         firstText = (TextView) findViewById(R.id.first_text);
         secondText = (TextView) findViewById(R.id.second_text);
         thirdText = (TextView) findViewById(R.id.third_text);
-        fourthText = (TextView) findViewById(R.id.fourth_text);
         firstLayout = (RelativeLayout) findViewById(R.id.first_layout);
         secondLayout = (RelativeLayout) findViewById(R.id.second_layout);
         thirdLayout = (RelativeLayout) findViewById(R.id.third_layout);
-        fourthLayout = (RelativeLayout) findViewById(R.id.fourth_layout);
         firstLayout.setOnClickListener(MainActivity.this);
         secondLayout.setOnClickListener(MainActivity.this);
         thirdLayout.setOnClickListener(MainActivity.this);
-        fourthLayout.setOnClickListener(MainActivity.this);
     }
     @Override
     public void onClick(View v) {
@@ -88,9 +80,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.third_layout:
                 setChioceItem(2);
-                break;
-            case R.id.fourth_layout:
-                setChioceItem(3);
                 break;
             default:
                 break;
@@ -141,17 +130,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                     fragmentTransaction.show(fg3);
                 }
                 break;
-            case 3:
-// fourthImage.setImageResource(R.drawable.XXXX);
-                fourthText.setTextColor(dark);
-                fourthLayout.setBackgroundColor(gray);
-                if (fg4 == null) {
-                    fg4 = new FourthFragment();
-                    fragmentTransaction.add(R.id.content, fg4);
-                } else {
-                    fragmentTransaction.show(fg4);
-                }
-                break;
         }
         fragmentTransaction.commit(); // 提交
     }
@@ -168,9 +146,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 // thirdImage.setImageResource(R.drawable.XXX);
         thirdText.setTextColor(gray);
         thirdLayout.setBackgroundColor(whirt);
-// fourthImage.setImageResource(R.drawable.XXX);
-        fourthText.setTextColor(gray);
-        fourthLayout.setBackgroundColor(whirt);
     }
     /**
      * 隐藏Fragment
@@ -186,9 +161,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
         if (fg3 != null) {
             fragmentTransaction.hide(fg3);
-        }
-        if (fg4 != null) {
-            fragmentTransaction.hide(fg4);
         }
     }
 }

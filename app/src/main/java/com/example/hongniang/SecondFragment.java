@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fg1, container, false);
+        View view = inflater.inflate(R.layout.fg2, container, false);
         return view;
     }
 }
